@@ -1,6 +1,6 @@
 package array
 
-// 977
+// Square 977
 func Square(a []int) []int{
 	// []{-4, 0, 1, 2, 3}
 	left := 0
@@ -16,4 +16,4 @@ func Square(a []int) []int{
 		}
 	}
 	return ret
-}21345
+}
