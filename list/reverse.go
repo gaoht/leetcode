@@ -1,11 +1,5 @@
 package list
 
-type RListNode struct {
-     Val int
-     Next *ListNode
-}
-
-
 // 206
 func ReverseList(head *ListNode) *ListNode {
 	var pre  *ListNode

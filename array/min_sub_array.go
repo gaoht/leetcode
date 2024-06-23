@@ -31,7 +31,7 @@ func MinSubArrayLen(a []int, target int) int {
 		sum += a[j];	
 		for (sum >= target) {
 			length := j - i + 1
-			if length < minLength {
+			if length < minLength { 	
 				minLength = length
 			} 
 			sum -= a[i]
