@@ -1,7 +1,5 @@
 package strings
 
-import "fmt"
-
 // RepeatedSubstringPattern 459
 
 // s = "abab"
