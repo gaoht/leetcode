@@ -3,7 +3,7 @@
  *
  * [35] 搜索插入位置
  */
-package main
+package leetcode
 // @lc code=start
 func searchInsert(nums []int, target int) int {
 	left, right := -1, len(nums)

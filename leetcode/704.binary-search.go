@@ -2,7 +2,7 @@
 // Output: 4
 // Explanation: 9 exists in nums and its index is 4
 
-package main
+package leetcode
 
 func binarySearch(){
 

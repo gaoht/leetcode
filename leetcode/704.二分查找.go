@@ -3,7 +3,7 @@
  *
  * [704] 二分查找
  */
-package main
+package leetcode
 // @lc code=start
 func search(nums []int, target int) int {
 	left, right := -1, len(nums)
