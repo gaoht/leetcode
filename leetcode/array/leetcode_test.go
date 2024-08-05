@@ -29,3 +29,4 @@ func TestMinSubArrayLen(t *testing.T){
 		So(minSubArrayLen(11, []int{1,1,1,1,1,1,1,1}), ShouldEqual, 0)
 	})
 }
+
