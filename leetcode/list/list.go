@@ -36,6 +36,7 @@ func printList(h *ListNode) {
 		if cur.Next != nil {
 			sb.WriteByte(' ')
 		}
+		cur = cur.Next
 	}
 	fmt.Println(sb.String())
 }
