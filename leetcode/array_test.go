@@ -52,3 +52,18 @@ func TestTotalFruits(t *testing.T) {
 	})
 }
 
+func TestMinWindow(t *testing.T) {
+	Convey("最小覆盖子串", t, func(){
+		So(minWindow("ADOBECODEBANC", "ABC"), ShouldEqual, "BANC")
+		So(minWindow("a", "a"), ShouldEqual, "a")
+		So(minWindow("a", "aa"), ShouldEqual, "")
+	})
+}
+
+
+
+func TestGenerateMatrix(t *testing.T){
+	Convey("螺旋矩阵", t, func(){
+		So(generateMatrix(3), ShouldResemble, [][]int{{1,2,3},{8,9,4},{7,6,5}})
+	})
+}
