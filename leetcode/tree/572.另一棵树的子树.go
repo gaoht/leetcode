@@ -1,4 +1,5 @@
 package leetcode
+
 // [572] 另一棵树的子树
 func isSubtree(root *TreeNode, subRoot *TreeNode) bool {
 	if root == nil || subRoot == nil {
@@ -21,6 +22,26 @@ func isSubtree(root *TreeNode, subRoot *TreeNode) bool {
 	return false
 }
 
+func isSubtreeR(r *TreeNode, s *TreeNode) bool {
+	if r == nil {
+		return false
+	}
+	if isSameTreeR(r, s) {
+		return true
+	} else {
+		if r.Left != nil {
+			 if (isSubtreeR(r.Left, s)){
+				return true
+			 }
+		}
+		if r.Right != nil {
+			if (isSubtreeR(r.Right, s)){
+				return true
+			 }
+		}
+	}
+	return false
+}
 func checkIsSameTree(l *TreeNode, r *TreeNode) bool {
 	q := &Queue{}	
 	q.Push(l)
@@ -41,4 +62,14 @@ func checkIsSameTree(l *TreeNode, r *TreeNode) bool {
 		}
 	}
 	return true
+}
+
+func isSameTreeR(l *TreeNode, r *TreeNode) bool { 
+	if l == nil && r == nil {
+		return true
+	}
+	if l != nil && r != nil && r.Val == l.Val {
+		return isSameTreeR(l.Left, r.Left) && isSameTreeR(l.Right, r.Right)
+	}
+	return false
 }

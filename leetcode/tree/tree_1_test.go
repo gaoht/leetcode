@@ -372,6 +372,97 @@ func TestIsSubTree(t *testing.T) {
 			},
 		}
 		So(isSubtree(n1, n2), ShouldBeTrue)
+		So(isSubtree(n1, n2), ShouldBeTrue)
 
+
+		n1 = &TreeNode{
+			Val: 1,
+			Right: &TreeNode{
+				Val: 1,
+				Right: &TreeNode{
+					Val: 1,
+					Right: &TreeNode{
+						Val: 1,
+						Left: &TreeNode{
+							Val: 1,
+						},
+						Right: &TreeNode{
+							Val: 2,
+						},
+					},
+				},
+				
+			},
+		}
+		n2 = &TreeNode{
+			Val: 1,
+			Right: &TreeNode{
+				Val: 1,
+				Right: &TreeNode{
+					Val: 1,
+					Left:  &TreeNode{
+						Val: 1,
+					},
+					Right:  &TreeNode{
+						Val: 2,
+					},
+				},
+			},
+		}
+		So(isSubtree(n1, n2), ShouldBeTrue)
+
+		n1 = &TreeNode{
+			Val: 1,
+			Right: &TreeNode{
+				Val: 1,
+				Right: &TreeNode{
+					Val: 1,
+					Right: &TreeNode{
+						Val: 1,
+						Right: &TreeNode{
+							Val: 1,
+							Right: &TreeNode{
+								Val: 1,
+								Right: &TreeNode{
+									Val: 1,
+									Right: &TreeNode{
+										Val: 1,
+										Right: &TreeNode{
+											Val: 1,
+											Right: &TreeNode{
+												Val: 1,
+												Left: &TreeNode{
+													Val: 1,
+												},
+												Right: &TreeNode{
+													Val: 2,
+												},
+											},
+										},
+									},
+								},
+							},
+						},
+					},
+				},
+				
+			},
+		}
+		n2 = &TreeNode{
+			Val: 1,
+			Right: &TreeNode{
+				Val: 1,
+				Right: &TreeNode{
+					Val: 1,
+					Left:  &TreeNode{
+						Val: 1,
+					},
+					Right:  &TreeNode{
+						Val: 2,
+					},
+				},
+			},
+		}
+		So(isSubtreeR(n1, n2), ShouldBeTrue)
 	})
 }
