@@ -220,3 +220,166 @@ func TestBinaryTreePaths(t *testing.T){
 		So(binaryTreePaths2(n), ShouldResemble, []string{"1"})
 	})
 }
+
+func TestSumOfLeftLeaves(t *testing.T){
+	Convey("左叶子之和", t, func(){
+		n := &TreeNode{
+			Val: 3,
+			Left: &TreeNode{
+				Val: 9,
+			},
+			Right: &TreeNode{
+				Val:  20,
+				Left: &TreeNode{
+					Val: 15,
+				},
+				Right: &TreeNode{
+					Val: 7,
+				},
+			},
+		}
+		So(sumOfLeftLeaves(n), ShouldEqual, 24)
+		n = &TreeNode{
+			Val: 1,
+		}
+		So(sumOfLeftLeaves(n), ShouldEqual, 0)
+	})
+}
+
+func TestFindBottomLeftValue(t *testing.T){
+	Convey("找树左下角的值", t, func(){
+		n := &TreeNode{
+			Val: 2,
+			Left: &TreeNode{
+				Val: 1,
+			},
+			Right: &TreeNode{
+				Val: 3,
+			},
+		}
+		So(findBottomLeftValue(n), ShouldEqual, 1)
+		So(findBottomLeftValueR(n), ShouldEqual, 1)
+		n = &TreeNode{
+			Val: 1,
+			Left: &TreeNode{
+				Val: 2,
+				Left: &TreeNode{
+					Val: 4,
+				},
+			},
+			Right: &TreeNode{
+				Val: 3,
+				Left: &TreeNode{
+					Val: 5,
+					Left: &TreeNode{
+						Val: 7,
+					},
+				},
+				Right:  &TreeNode{
+					Val: 6,
+				},
+			},
+		}
+		So(findBottomLeftValue(n), ShouldEqual, 7)
+		So(findBottomLeftValueR(n), ShouldEqual, 7)
+	})
+}
+
+func TestHasPathSum(t *testing.T){
+	Convey("路径总和", t, func(){
+		n := &TreeNode{
+			Val: 5,
+			Left: &TreeNode{
+				Val: 4,
+				Left: &TreeNode{
+					Val: 11,
+					Left: &TreeNode{
+						Val: 7,
+					},
+					Right: &TreeNode{
+						Val: 2,
+					},
+				},
+			},
+			Right: &TreeNode{
+				Val: 8,
+				Left: &TreeNode{
+					Val: 13,
+				},
+				Right: &TreeNode{
+					Val: 4,
+					Right: &TreeNode{
+						Val: 1,
+					},
+				},
+			},
+		}
+		So(hasPathSum(n, 22), ShouldBeTrue)
+		So(hasPathSumR(n, 22), ShouldBeTrue)
+		n = nil
+		So(hasPathSum(n, 0), ShouldBeFalse)
+		So(hasPathSumR(n, 0), ShouldBeFalse)
+		n = &TreeNode{
+			Val: 1,
+			Left: &TreeNode{
+				Val: 2,
+			},
+			Right: &TreeNode{
+				Val: 3,
+			},
+		}
+		So(hasPathSum(n, 5), ShouldBeFalse)
+		So(hasPathSumR(n, 5), ShouldBeFalse)
+		n = &TreeNode{
+			Val: 1,
+			Left: &TreeNode{
+				Val: 2,
+			},
+		}
+		So(hasPathSum(n, 1), ShouldBeFalse)
+		So(hasPathSumR(n, 1), ShouldBeFalse)
+	})
+}
+
+
+func TestPathSum(t *testing.T){
+	Convey("路径总和III", t, func(){
+		n := &TreeNode{
+			Val: 10,
+			Left: &TreeNode{
+				Val: 5,
+				Left: &TreeNode{
+					Val: 3,
+					Left: &TreeNode{
+						Val: 3,
+					},
+					Right: &TreeNode{
+						Val: -2,
+					},
+				},
+				Right: &TreeNode{
+					Val: 2,
+					Right: &TreeNode{
+						Val: 1,
+					},
+				},
+			},
+			Right: &TreeNode{
+				Val: -3,
+				Right: &TreeNode{
+					Val: 11,
+				},
+			},
+		}
+		So(pathSum(n, 8), ShouldEqual, 3)
+	})
+}
+
+func TestBuildTree(t *testing.T) {
+	Convey("从中序与后续遍历序列构造二叉树", t, func(){
+		in := []int{2,3,1}
+		post := []int{3,2,1}
+		buildTree(in, post)
+
+	})
+}
