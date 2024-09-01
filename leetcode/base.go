@@ -26,6 +26,13 @@ func (q *Queue) Pop() *TreeNode {
 	return n
 }
 
+func (q *Queue) First() *TreeNode {
+	if len(q.nodes) == 0 {
+		return nil
+	}
+	return q.nodes[0]
+}
+
 func (q *Queue) IsEmpty () bool{
 	return len(q.nodes) == 0
 }
