@@ -23,12 +23,12 @@ func buildTree(inorder []int, postorder []int) *TreeNode {
 		}
 	}
 	inorderLeft := inorder[:i]
-	inorderRight := []int{}
+	var inorderRight []int
 	if i + 1 <= len(inorder) {
 		inorderRight = inorder[i+1:]
 	}
 	
 	root.Left = buildTree(inorderLeft, postorder[:len(inorderLeft)])
-	root.Right = buildTree(inorderRight, postorder[len(inorderLeft) : ])
+	root.Right = buildTree(inorderRight, postorder[len(inorderLeft) : len(postorder) - 1])
 	return root
 }
