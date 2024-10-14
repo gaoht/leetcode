@@ -78,3 +78,32 @@ func getDepth(n *TreeNode) int {
 	}
 	return d
 }
+
+
+func isBalanced3(root *TreeNode) bool {
+    if root == nil {
+        return true
+    }
+    l := getDepth3(root.Left, 0)
+    r := getDepth3(root.Right, 0)
+    if l == r || l - r == -1 || l - r == 1 {
+        return isBalanced(root.Left) && isBalanced(root.Right)
+    } else {
+        return false
+    }
+}
+
+func getDepth3(node *TreeNode, d int) int {
+    if node == nil {
+        return d
+    }
+    if node.Left == nil && node.Right == nil {
+        return d + 1
+    }
+    l := getDepth3(node.Left, d + 1)
+    r := getDepth3(node.Right, d + 1)
+    if l > r {
+        return l
+    }
+    return r
+}

@@ -1,6 +1,7 @@
 package leetcode
 
 import (
+	"fmt"
 	"testing"
 
 	. "github.com/smartystreets/goconvey/convey"
@@ -381,5 +382,40 @@ func TestBuildTree(t *testing.T) {
 		post := []int{3,2,1}
 		buildTree(in, post)
 
+	})
+}
+
+func TestIsBanlanced3(t *testing.T) {
+	Convey("平衡二叉树", t, func(){
+		n := &TreeNode{
+			Val: 1,
+			Left: &TreeNode{
+				Val: 2,
+				Left: &TreeNode{
+					Val: 3,
+					Left: &TreeNode{
+						Val: 4,
+					},
+					Right: &TreeNode{
+						Val: 4,
+					},
+				},
+				Right: &TreeNode{
+					Val: 3,
+				},
+			},
+			Right: &TreeNode{
+				Val: 2,
+			},
+		}
+		d := getDepth3(n, 0)
+		fmt.Printf("%d", d)
+	})
+	
+}
+func TestSortedArrayToBST(t *testing.T) {
+	Convey("构建平衡搜索数", t, func(){
+		nums := []int{-10,-3,0,5,9}
+		SortedArrayToBST(nums)
 	})
 }
