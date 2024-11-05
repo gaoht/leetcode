@@ -70,3 +70,18 @@ func TestBag(t *testing.T){
 		So(v, ShouldEqual, 8)
 	})
 }
+
+
+func TestFindTargetSums(t *testing.T){
+	Convey("目标和", t, func(){
+		So(findTargetSumWays([]int{1,1,1,1,1}, 3), ShouldEqual, 5)
+		So(findTargetSumWays([]int{1,0}, 1), ShouldEqual, 2)
+	})
+}
+
+func TestChange(t *testing.T) {
+	Convey("零钱兑换", t, func(){
+		So(change(5, []int{1,2,5}), ShouldEqual, 4)
+		So(change(5, []int{2,5}), ShouldEqual, 1)
+	})
+}

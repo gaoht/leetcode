@@ -19,7 +19,7 @@ func (is *IntensitySegments) Add(from, to, amount int){
 	// left := binarySearch(is.segments, from)
 	seg := make([]int, 0)
 	weights := make([]int, 0)
-	if !check(from, to, amount) {
+	if !check(from, to) {
 		return
 	}
 	
@@ -100,7 +100,7 @@ func (is *IntensitySegments) ToString() string {
 
 
 
-func check(from, to, amount int) bool {
+func check(from, to int) bool {
 	// [from, to) 
 	if from >= to {
 		return false
