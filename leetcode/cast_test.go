@@ -85,3 +85,19 @@ func TestChange(t *testing.T) {
 		So(change(5, []int{2,5}), ShouldEqual, 1)
 	})
 }
+
+func TestWordBreak(t *testing.T) {
+	Convey("单词拆分", t, func(){
+		So(wordBreak("leetcode", []string{"leet", "code"}), ShouldBeTrue)
+		So(wordBreak("applepenapple", []string{"pen", "apple"}), ShouldBeTrue)
+		So(wordBreak("cars", []string{"car", "ca", "rs"}), ShouldBeTrue)
+		So(wordBreak("aaaaaaa", []string{"aaaa", "aaa"}), ShouldBeTrue)
+		So(wordBreak("catsandog", []string{"cats","dog","sand","and","cat"}), ShouldBeFalse)		
+		
+		So(wordBreakError("leetcode", []string{"leet", "code"}), ShouldBeTrue)
+		So(wordBreakError("applepenapple", []string{"apple", "pen"}), ShouldBeTrue)
+		So(wordBreakError("cars", []string{"car", "ca", "rs"}), ShouldBeTrue)
+		So(wordBreakError("aaaaaaa", []string{"aaaa", "aaa"}), ShouldBeTrue)
+		So(wordBreakError("catsandog", []string{"cats","dog","sand","and","cat"}), ShouldBeFalse)
+	})
+}
