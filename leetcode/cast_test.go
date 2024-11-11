@@ -95,9 +95,68 @@ func TestWordBreak(t *testing.T) {
 		So(wordBreak("catsandog", []string{"cats","dog","sand","and","cat"}), ShouldBeFalse)		
 		
 		So(wordBreakError("leetcode", []string{"leet", "code"}), ShouldBeTrue)
+		So(wordBreakError("appleapplepen", []string{"apple", "pen"}), ShouldBeTrue)
 		So(wordBreakError("applepenapple", []string{"apple", "pen"}), ShouldBeTrue)
+		
 		So(wordBreakError("cars", []string{"car", "ca", "rs"}), ShouldBeTrue)
 		So(wordBreakError("aaaaaaa", []string{"aaaa", "aaa"}), ShouldBeTrue)
 		So(wordBreakError("catsandog", []string{"cats","dog","sand","and","cat"}), ShouldBeFalse)
 	})
 }
+
+func TestRob(t *testing.T){
+	Convey("打家劫舍", t, func(){
+		So(rob([]int{2,1,1,2}), ShouldEqual, 4)
+		// So(rob2([]int{1,1,1,2}), ShouldEqual, 3)
+		So(rob2([]int{1,1,3,6,7,10,7,1,8,5,9,1,4,4,3}), ShouldEqual, 3)
+	})
+}
+
+func TestLengthOfLIS(t *testing.T){
+	Convey("最长递增子序列", t, func(){
+		So(lengthOfLIS([]int{0,1,0,3,2,3}), ShouldEqual, 4)
+	})
+}
+
+func TestNumsDistinct(t *testing.T) {
+	Convey("不同的子序列", t, func(){
+		So(numDistinct("rabbbiit", "rabbit"), ShouldEqual, 6)
+	})
+}
+func TestMinDistance(t *testing.T) {
+	Convey("两个字符串的删除操作", t, func(){
+		So(minDistance("leetcode", "etco"), ShouldEqual, 4)
+	})
+}
+
+func TestLongestPalindromeSubseq(t *testing.T) {
+	Convey("最长回文子序列", t, func(){
+		So(longestPalindromeSubseq("bbbab"), ShouldEqual, 4)
+		So(longestPalindromeSubseq("cbbd"), ShouldEqual, 2)
+	})
+}
+
+func TestCandy(t *testing.T) {
+	Convey("分发糖果", t, func(){
+		So(candy([]int{1,3,4,5,2}), ShouldEqual, 11)
+	})
+}
+
+func TestTrap(t *testing.T){
+	Convey("接雨水", t, func ()  {
+		So(trap([]int{0,1,0,2,1,0,1,3,2,1,2,1}), ShouldEqual, 6)
+	})
+	Convey("接雨水2", t, func ()  {
+		So(trap2([]int{0,1,0,2,1,0,1,3,2,1,2,1}), ShouldEqual, 6)
+	})
+}
+
+
+func TestNextGreaterElement(t *testing.T){
+	Convey("下一个更大元素", t, func ()  {
+		So(nextGreaterElement([]int{4,1,2}, []int{1,3,4,2}), ShouldResemble, []int{-1, 3, -1})
+	})
+}
+
+
+
